@@ -1,0 +1,697 @@
+/* ========================================
+   EKART RESPONSIVE CSS
+   Professional, Clean, Modern Design
+   ======================================== */
+
+/* ========================================
+   BASE FIXES - APPLY TO ALL SCREENS
+   ======================================== */
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+  header .max-w-7xl {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  header nav {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  header nav ul {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+}
+
+/* ========================================
+   SMALL LAPTOPS (max-width: 1024px)
+   ======================================== */
+@media (max-width: 1024px) {
+  .max-w-7xl {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .grid.grid-cols-1.sm\:grid-cols-2.md\:grid-cols-3.lg\:grid-cols-5 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 1.25rem !important;
+  }
+
+  .pt-20.bg-gray-50.min-h-screen>.max-w-7xl>.flex.gap-7 {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+
+  .w-\[400px\].h-fit {
+    width: 100% !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+  }
+
+  .w-64 {
+    width: 15rem;
+  }
+}
+
+/* ========================================
+   TABLET (max-width: 768px)
+   ======================================== */
+@media (max-width: 768px) {
+  header .max-w-7xl {
+    padding: 0.75rem 1rem !important;
+  }
+
+  header nav {
+    gap: 1rem !important;
+  }
+
+  header nav ul {
+    gap: 0.75rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  header .w-\[100px\] {
+    width: 85px !important;
+  }
+
+  .bg-gray-100.mt-10.p-4.rounded-md.h-max.hidden.md\:block.w-64 {
+    display: none !important;
+  }
+
+  .grid.grid-cols-1.sm\:grid-cols-2.md\:grid-cols-3.lg\:grid-cols-5 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 1rem !important;
+  }
+
+  .pt-20.bg-gray-50.min-h-screen>.max-w-7xl>.flex.gap-7 {
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+  }
+
+  .flex.justify-between.items-center.pr-7 {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    gap: 1rem !important;
+    padding: 1rem !important;
+    align-items: center !important;
+  }
+
+  .flex.justify-between.items-center.pr-7>.flex.items-center.gap-4:first-child {
+    grid-column: 1 / -1 !important;
+  }
+
+  .w-\[400px\].h-fit {
+    width: 100% !important;
+  }
+
+  footer .md\:flex.md\:justify-between {
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+
+  .max-w-sm {
+    max-width: 95%;
+  }
+
+  .grid.grid-cols-2.gap-4 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ========================================
+   MOBILE (max-width: 480px)
+   ======================================== */
+@media (max-width: 480px) {
+  body {
+    overflow-x: hidden !important;
+  }
+
+  header {
+    padding: 0.75rem 0 !important;
+  }
+
+  header .max-w-7xl {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 1rem !important;
+    gap: 0.5rem !important;
+  }
+
+  header .w-\[100px\] {
+    width: 70px !important;
+  }
+
+  header nav {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    flex-wrap: nowrap !important;
+  }
+
+  header nav ul {
+    /* MODIFIED: STRICTLY hide desktop links on mobile to prevent crowding */
+    display: none !important;
+  }
+
+  header nav ul li {
+    white-space: nowrap;
+    font-size: 0.75rem !important;
+  }
+
+  header nav>a.relative,
+  header nav>button {
+    padding: 0.4rem 0.6rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  header nav .absolute.-top-3.-right-5 {
+    top: -0.4rem !important;
+    right: -0.4rem !important;
+    font-size: 0.7rem !important;
+    padding: 0.1rem 0.35rem !important;
+  }
+}
+
+/* ========================================
+   NAVBAR SIZE & ALIGNMENT IMPROVEMENTS
+   ======================================== */
+
+header {
+  padding: 0.4rem 0 !important;
+}
+
+header .max-w-7xl {
+  padding-top: 0.4rem !important;
+  padding-bottom: 0.4rem !important;
+}
+
+header img[src="/Ekart.png"] {
+  width: 75px !important;
+  height: auto !important;
+}
+
+header nav {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  flex-wrap: nowrap !important;
+}
+
+header nav ul {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+header nav ul li {
+  font-size: 0.9rem !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+}
+
+header nav button,
+header nav a.relative {
+  padding: 0.4rem 0.85rem !important;
+  font-size: 0.85rem !important;
+  height: auto !important;
+  line-height: 1.2 !important;
+}
+
+/* ========================================
+   FIX: SHOW DASHBOARD ON MOBILE (ONLY FIX)
+   ======================================== */
+@media (max-width: 768px) {
+  header nav {
+    /* MODIFIED: Force single row on mobile/tablet */
+    flex-wrap: nowrap !important;
+  }
+
+  header nav ul {
+    /* MODIFIED: Hide desktop links on tablet/mobile */
+    display: none !important;
+  }
+}
+
+
+/* ========================================
+   FINAL MOBILE NAVBAR COMPRESSION FIX
+   (Ensures Dashboard Visibility)
+   ======================================== */
+@media (max-width: 480px) {
+
+  /* Reduce overall nav font size */
+  header nav ul li {
+    font-size: 0.7rem !important;
+  }
+
+  /* Compress Hello, Username */
+  header nav ul li:nth-child(3) {
+    max-width: 80px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  /* Reduce button sizes */
+  header nav button,
+  header nav a.relative {
+    padding: 0.3rem 0.5rem !important;
+    font-size: 0.7rem !important;
+  }
+
+  /* Reduce gap between items */
+  header nav {
+    gap: 0.35rem !important;
+  }
+
+  header nav ul {
+    gap: 0.35rem !important;
+  }
+
+  /* Force wrap but keep visible */
+  header nav {
+    /* MODIFIED: Force single row */
+    flex-wrap: nowrap !important;
+  }
+
+  header nav ul {
+    /* MODIFIED: Grid hidden strictly */
+    display: none !important;
+  }
+}
+
+/* ========================================
+   PRODUCTS PAGE - 2 PRODUCTS PER ROW FIX
+   ADDED - Ensures products display properly
+   ======================================== */
+
+/* ADDED - Force 2 products per row on all screen sizes */
+.grid.grid-cols-1.sm\:grid-cols-2.md\:grid-cols-2.lg\:grid-cols-2 {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1.5rem !important;
+  width: 100% !important;
+}
+
+/* ADDED - Prevent product card overflow */
+.grid.grid-cols-1.sm\:grid-cols-2.md\:grid-cols-2.lg\:grid-cols-2>div {
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+/* ADDED - Responsive adjustments for mobile */
+@media (max-width: 640px) {
+  .grid.grid-cols-1.sm\:grid-cols-2.md\:grid-cols-2.lg\:grid-cols-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    gap: 1rem !important;
+  }
+}
+
+/* ========================================
+   DASHBOARD PAGE UI IMPROVEMENTS
+   ADDED - Better layout, spacing, and visual structure
+   ======================================== */
+
+/* ADDED - Improve main dashboard container spacing */
+.pl-\[350px\].py-20.pr-20 {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+  padding-right: 2rem !important;
+  min-height: 100vh !important;
+}
+
+/* ADDED - Better spacing for dashboard sections */
+.pl-\[350px\].py-10.pr-20 {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+/* ADDED - Improve card spacing and alignment in dashboard */
+.pl-\[350px\].py-20.pr-20 .flex.flex-col.gap-4,
+.pl-\[350px\].py-10.pr-20 .flex.flex-col.gap-4 {
+  gap: 1.5rem !important;
+}
+
+/* ADDED - Better card styling for products list */
+.pl-\[350px\].py-20.pr-20 .flex.items-center.justify-between {
+  padding: 1.5rem !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+
+/* ADDED - Improve search and filter section alignment */
+.pl-\[350px\].py-20.pr-20 .flex.justify-between {
+  margin-bottom: 1.5rem !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+
+/* ADDED - Better spacing for user cards grid */
+.pl-\[350px\].py-20.pr-20 .grid.grid-cols-3 {
+  gap: 1.5rem !important;
+  margin-top: 1.5rem !important;
+}
+
+/* ADDED - Improve user card styling */
+.pl-\[350px\].py-20.pr-20 .bg-pink-100 {
+  padding: 1.5rem !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+/* ADDED - User card hover effect */
+.pl-\[350px\].py-20.pr-20 .bg-pink-100:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ADDED - Better table styling for orders */
+.pl-\[350px\].py-20.pr-20 table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+  background: white !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* ADDED - Table header styling */
+.pl-\[350px\].py-20.pr-20 thead {
+  background: linear-gradient(to right, #ec4899, #db2777) !important;
+  color: white !important;
+}
+
+/* ADDED - Table cell padding */
+.pl-\[350px\].py-20.pr-20 th,
+.pl-\[350px\].py-20.pr-20 td {
+  padding: 1rem !important;
+  text-align: left !important;
+}
+
+/* ADDED - Table row hover effect */
+.pl-\[350px\].py-20.pr-20 tbody tr:hover {
+  background-color: #fdf2f8 !important;
+}
+
+/* ADDED - Improve AddProduct form card */
+.pl-\[350px\].py-10.pr-20 .w-full.my-20 {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 0.75rem !important;
+}
+
+/* ADDED - Better form field spacing */
+.pl-\[350px\].py-10.pr-20 .flex.flex-col.gap-4 {
+  gap: 1.25rem !important;
+}
+
+/* ADDED - Improve grid layout for form fields */
+.pl-\[350px\].py-10.pr-20 .grid.grid-cols-2.gap-4 {
+  gap: 1.25rem !important;
+}
+
+/* ADDED - Responsive dashboard for tablets */
+@media (max-width: 1024px) {
+
+  .pl-\[350px\].py-20.pr-20,
+  .pl-\[350px\].py-10.pr-20 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  /* ADDED - Stack user cards on smaller screens */
+  .pl-\[350px\].py-20.pr-20 .grid.grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* ADDED - Responsive dashboard for mobile */
+@media (max-width: 768px) {
+
+  .pl-\[350px\].py-20.pr-20,
+  .pl-\[350px\].py-10.pr-20 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 1.5rem !important;
+  }
+
+  /* ADDED - Single column for user cards on mobile */
+  .pl-\[350px\].py-20.pr-20 .grid.grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+
+  /* ADDED - Make table scrollable on mobile */
+  .pl-\[350px\].py-20.pr-20 .overflow-x-auto {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+}
+
+/* ========================================
+   RESTORED DESKTOP LAYOUT (STRICT)
+   Fixes gaps crushed by mobile overrides
+   ======================================== */
+@media (min-width: 1024px) {
+  header nav {
+    /* RESTORED DESKTOP LAYOUT - gap-10 matches extensive gap */
+    gap: 2.5rem !important;
+    flex-wrap: nowrap !important;
+  }
+
+  header nav ul {
+    /* RESTORED DESKTOP LAYOUT - Ensure visibility and proper spacing gap-7 */
+    display: flex !important;
+    gap: 1.75rem !important;
+  }
+
+  /* RESTORED DESKTOP LAYOUT - Original button size */
+  header nav button,
+  header nav a.relative {
+    padding: 0.5rem 1rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* ========================================
+   CART PAGE RESPONSIVENESS FIXES
+   (Strictly for small screen responsiveness only)
+   ======================================== */
+@media (max-width: 768px) {
+
+  /* Strictly for small screen responsiveness: Cart page product info container */
+  /* This overrides the fixed w-[350px] from Cart.jsx on tablets and mobile */
+  .flex.items-center.gap-4.w-\[350px\] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Strictly for small screen responsiveness: Cart page name container */
+  /* This overrides the fixed w-[260px] from Cart.jsx to allow flexible sizing */
+  .w-\[260px\] {
+    width: calc(100% - 100px) !important;
+    flex: 1 !important;
+  }
+
+  /* Strictly for small screen responsiveness: Ensure product name wraps or truncates properly */
+  /* This prevents the name from breaking the layout on narrow screens */
+  .w-\[260px\] h2 {
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  /* Strictly for mobile responsiveness: Orders Section / OrderCard layout fix */
+  /* Why: Hardcoded paddings and flex containers overlap on narrow screens */
+  .pr-20.flex.flex-col.gap-3 {
+    padding-right: 0 !important;
+  }
+
+  .flex.justify-between.items-center.mb-4 {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Ensure Order ID breaks to avoid horizontal overflow */
+  .text-gray-600 {
+    word-break: break-all !important;
+    white-space: normal !important;
+  }
+
+  /* Product list item - Stack vertically on mobile */
+  .flex.justify-between.items-center.bg-gray-50.p-3.rounded-lg {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+
+  /* Fix product name width */
+  .w-\[300px\].line-clamp-2 {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* Hide raw Product ID on mobile */
+  .flex.justify-between.items-center.bg-gray-50.p-3.rounded-lg span:nth-of-type(3) {
+    display: none !important;
+  }
+
+  /* User/Status flex - Stack for readability */
+  .shadow-lg.rounded-2xl.p-5.border.border-gray-200 .flex.justify-between.items-center:nth-of-type(2) {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+
+  /* Strictly for mobile responsiveness: Center Password Visibility Icon */
+  /* Why: bottom-2 class is slightly off-center on small mobile resolutions */
+  .absolute.right-5.bottom-2 {
+    bottom: 50% !important;
+    transform: translateY(50%) !important;
+  }
+
+  /* Strictly for mobile responsiveness: Reset admin layout padding */
+  /* Why: .pl-[350px] pushes content off-screen on phones */
+  .pl-\[350px\] {
+    padding-left: 1rem !important;
+  }
+}
+
+/* ========================================
+   TABLET RESPONSIVENESS (769px to 1024px)
+   STRICTLY FOR TABLET SCREENS ONLY
+   Ensures clean Dashboard layout and sidebar visibility
+   ======================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  /* Strictly for tablet responsiveness: Hide fixed sidebar and remove its padding */
+  /* Why: Sidebar crushes content between 768px and 1024px */
+  .fixed.md\:block.w-\[300px\] {
+    display: none !important;
+  }
+
+  .pl-\[350px\] {
+    padding-left: 2rem !important;
+    /* Balanced padding for tablet edges */
+  }
+
+  /* Strictly for tablet responsiveness: Show hamburger menu button */
+  /* Why: Provides access to navigation once fixed sidebar is hidden */
+  .hamburger-menu-btn {
+    display: block !important;
+    top: 90px !important;
+    left: 20px !important;
+  }
+
+  /* Strictly for tablet responsiveness: Fix Hamburger Menu Sidebar Visibility */
+  /* Why: Sidebar and backdrop are hidden above 768px in base index.css */
+  .mobile-sidebar-backdrop,
+  .mobile-sidebar {
+    display: block !important;
+  }
+
+  /* Strictly for tablet responsiveness: Fix Hamburger Menu clickability/z-index */
+  /* Why: Low z-index on MobileNavbar header prevents dropdown from overlapping content */
+  header.lg\:hidden {
+    z-index: 100 !important;
+  }
+
+  /* Strictly for tablet responsiveness: Fix Footer Positioning */
+  /* Why: Prevents footer from floating upward when page content is short */
+  #root>div:nth-child(2),
+  main,
+  .pt-20.bg-gray-50.min-h-screen {
+    min-height: calc(100vh - 400px) !important;
+    /* Ensures footer stays at bottom while leaving space for header/footer heights */
+  }
+
+  /* Strictly for tablet responsiveness: Optimize Sales Stats cards (2 columns) */
+  /* Why: 4 columns are too squashed, 1 column wastes space */
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .lg\:col-span-4 {
+    grid-column: span 2 / span 2 !important;
+  }
+
+  /* Strictly for tablet responsiveness: Maximize chart height for better visibility */
+  .w-full.h-\[300px\] {
+    height: 400px !important;
+  }
+
+  /* Strictly for tablet responsiveness: Optimize User Cards (2 columns) */
+  /* Why: Fixed grid-cols-3 overflows or squashes on tablet widths */
+  .grid.grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Strictly for tablet responsiveness: Address Page - Order Summary & Grid Gap */
+  /* Why: Large gap and fixed width on mobile results in overflow on tablets */
+  .pt-10.grid.md\:grid-cols-2.md\:gap-20 {
+    gap: 1.5rem !important;
+    /* Reduce gap for tablet screen width */
+  }
+
+  .md\:w-\[400px\] {
+    width: 100% !important;
+    max-width: 350px !important;
+    /* Limit width for balanced look on tablets */
+  }
+
+  /* Strictly for tablet responsiveness: Header alignment for Admin Product page */
+  /* Why: Search and sort overlap horizontally */
+  .admin-product-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1.5rem !important;
+  }
+
+  .admin-product-search-wrapper,
+  .admin-product-search-input {
+    width: 100% !important;
+    max-width: 500px !important;
+  }
+
+  /* Strictly for tablet responsiveness: Correct non-standard vertical padding */
+  .pt-30 {
+    padding-top: 4rem !important;
+  }
+
+  /* Strictly for tablet responsiveness: Improve table readability */
+  .pl-\[350px\].py-20.pr-20 table {
+    font-size: 0.85rem !important;
+  }
+}

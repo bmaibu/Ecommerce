@@ -1,0 +1,463 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./responsive.css";
+
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ========================================
+   MOBILE SIDEBAR STYLES
+   Only for small screens (≤ 768px)
+   ======================================== */
+
+/* Hamburger Menu Button - Hidden on desktop, visible on mobile/tablet */
+.hamburger-menu-btn {
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  z-index: 30;
+  background-color: rgb(219, 39, 119);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu-btn:hover {
+  background-color: rgb(190, 24, 93);
+  transform: scale(1.05);
+}
+
+.hamburger-menu-btn:active {
+  transform: scale(0.95);
+}
+
+/* Mobile Sidebar Backdrop */
+.mobile-sidebar-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Mobile Sidebar Container */
+.mobile-sidebar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  background-color: rgb(252, 231, 243);
+  border-right: 1px solid rgb(251, 207, 232);
+  z-index: 50;
+  padding: 1.5rem;
+  overflow-y: auto;
+  animation: slideInFromLeft 0.3s ease;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Sidebar Close Button */
+.mobile-sidebar-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgb(219, 39, 119);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.mobile-sidebar-close:hover {
+  background-color: rgb(251, 207, 232);
+  transform: scale(1.1);
+}
+
+.mobile-sidebar-close:active {
+  transform: scale(0.9);
+}
+
+/* Mobile Sidebar Navigation */
+.mobile-sidebar-nav {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Media Query - Only show mobile sidebar elements on small screens */
+@media (max-width: 768px) {
+  .hamburger-menu-btn {
+    display: block;
+  }
+
+  .mobile-sidebar-backdrop {
+    display: block;
+  }
+
+  .mobile-sidebar {
+    display: block;
+  }
+}
+
+/* ========================================
+   PRODUCT DETAILS PAGE RESPONSIVENESS
+   Only affects small screens (≤ 768px)
+   Desktop remains 100% untouched
+   ======================================== */
+
+@media (max-width: 768px) {
+
+  /* Stack the product image and description vertically */
+  /* Why: Prevents overlapping seen in the 2-column grid on small screens */
+  .single-product-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    padding: 0 1rem !important;
+  }
+
+  /* Center the product image container and re-layout thumbnails */
+  /* Why: Fixed w-max and sidebar thumbnails look clumsy on mobile */
+  .product-img-container {
+    flex-direction: column-reverse !important;
+    /* Move thumbnails below the main image */
+    width: 100% !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Lay out thumbnails horizontally below the image */
+  /* Why: Vertical thumbnails waste horizontal space on mobile */
+  .product-img-thumbnails-wrapper {
+    flex-direction: row !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Adjust thumbnail sizing for mobile */
+  .product-img-thumbnail-item {
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: cover !important;
+  }
+
+  /* Make main image scale properly to fit screen width */
+  /* Why: Prevents 500px overflow and ensures visual balance */
+  .product-img-main-view {
+    width: 100% !important;
+    max-width: 450px !important;
+    /* Slightly smaller for better balance on mobile */
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  /* Improve product description spacing and alignment */
+  /* Why: Prevents text crowding and improves readability */
+  .product-desc-container {
+    width: 100% !important;
+    text-align: center !important;
+    align-items: center !important;
+    padding: 0 0.5rem !important;
+  }
+
+  /* Adjust typography for mobile proportions */
+  .product-desc-container h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .product-desc-container h2 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Center the Add to Cart button on mobile */
+  .product-desc-container button {
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+
+  /* Adjust quantity input width for mobile */
+  .product-desc-container .w-\[300px\] {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* ========================================
+   ADMIN PRODUCT PAGE RESPONSIVENESS
+   Only affects small screens (≤ 768px)
+   Desktop remains 100% untouched
+   ======================================== */
+
+@media (max-width: 768px) {
+
+  /* Remove fixed desktop sidebar padding */
+  /* Why: Fixed pl-[350px] pushes content off-screen on mobile */
+  .admin-product-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 6rem !important;
+    /* Account for fixed mobile navbar */
+  }
+
+  /* Stack search and sort vertically */
+  /* Why: Horizontal layout overflows and looks clumsy on narrow screens */
+  .admin-product-header {
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    align-items: stretch !important;
+    padding-top: 1rem !important;
+  }
+
+  .admin-product-search-wrapper,
+  .admin-product-search-input {
+    width: 100% !important;
+    /* Full width search bar */
+  }
+
+  .admin-product-sort-select {
+    width: 100% !important;
+    /* Full width sort dropdown */
+  }
+
+  /* Redesign product cards for mobile stacking */
+  /* Why: Horizontal list items overlap and waste space on mobile */
+  .admin-product-card-content {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    padding: 1.5rem 0.5rem !important;
+    text-align: center !important;
+  }
+
+  .admin-product-info-section {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .admin-product-info-section h1 {
+    width: 100% !important;
+    /* Remove fixed w-80 on title */
+    margin-top: 0.5rem !important;
+  }
+
+  /* Centering actions and price */
+  .admin-product-price {
+    font-size: 1.25rem !important;
+    margin: 0.5rem 0 !important;
+  }
+
+  .admin-product-actions {
+    justify-content: center !important;
+    width: 100% !important;
+    gap: 2rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  /* Ensure Dialog (Edit Form) is readable on mobile */
+  .admin-product-container [role="dialog"] {
+    width: 95vw !important;
+    max-width: none !important;
+  }
+}
+
+/* ========================================
+   PRODUCT PAGE SIDEBAR FIX (MOBILE)
+   Only affects small screens (≤ 768px)
+   Desktop remains 100% untouched
+   ======================================== */
+
+@media (max-width: 768px) {
+
+  /* Override the 'hidden md:block' class from FilterSidebar when used in mobile drawer */
+  .mobile-filter-content .hidden.md\:block {
+    display: block !important;
+    /* Make filters visible inside the drawer */
+    margin-top: 0 !important;
+    width: 100% !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  /* Slide-in animation for the mobile drawer */
+  .animate-slide-in-left {
+    animation: slideInLeft 0.3s ease-out forwards;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  /* Ensure the filter content takes full horizontal space in the drawer */
+  .mobile-filter-content {
+    width: 100% !important;
+  }
+
+  /* Spacing for mobile products grid top margin */
+  .pt-20 {
+    padding-top: 5rem !important;
+  }
+}
