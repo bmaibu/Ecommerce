@@ -88,12 +88,18 @@ VITE_RAZORPAY_KEY_ID=your_razorpay_id
 
 ### 4. Launch
 ```bash
-# Terminal 1: Backend
+# Terminal 1: Backend (Development)
 cd backend && npm start
 
-# Terminal 2: Frontend
+# Terminal 2: Frontend (Development)
 cd frontend && npm run dev
 ```
+
+---
+
+## 🔗 Live Implementation
+- **Production Backend**: [https://ecommerce-p45f.onrender.com](https://ecommerce-p45f.onrender.com)
+- **Status API**: `https://ecommerce-p45f.onrender.com/api/v1/product/get` (Sample Endpoint)
 
 ---
 
