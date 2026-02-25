@@ -10,7 +10,7 @@ export const getCart = async (req, res) => {
         );
 
         if (!cart) {
-            return res.json({ success: true, cart: [] });
+            return res.json({ success: true, cart: { items: [], totalPrice: 0 } });
         }
 
         res.status(200).json({ success: true, cart });

@@ -26,7 +26,7 @@ export const verifyEmail = (token, email) => {
     };
 
     transporter.sendMail(mailConfigurations, function (error, info) {
-        if (error) throw Error(error);
+        if (error) return console.log(error);
         console.log('Email Sent Successfully');
         console.log(info);
     });

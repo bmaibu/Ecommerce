@@ -16,7 +16,7 @@ const AdminUsers = () => {
   const getAllUsers = async () => {
     const accessToken = localStorage.getItem("accessToken")
     try {
-      const res = await axios.get('http://localhost:8000/api/v1/user/all-user', {
+      const res = await axios.get(`${import.meta.env.VITE_URL}/api/v1/user/all-user`, {
         headers: {
           Authorization: `Bearer ${accessToken}`
         }
@@ -29,11 +29,11 @@ const AdminUsers = () => {
     }
   }
 
-  const filteredUsers = users.filter(user=>
+  const filteredUsers = users.filter(user =>
     `${user.firstName} ${user.lastName}`.toLowerCase().includes(searchTerm.toLowerCase()) ||
     user.email.toLowerCase().includes(searchTerm.toLowerCase())
   )
-  
+
 
   useEffect(() => {
     getAllUsers()
@@ -64,8 +64,8 @@ const AdminUsers = () => {
               </div>
 
               <div className='flex gap-3 mt-3'>
-                <Button onClick={()=>navigte(`/dashboard/users/${user?._id}`)} variant='outline'><Edit />Edit</Button>
-                <Button onClick={()=>navigte(`/dashboard/users/orders/${user?._id}`)}><Eye />Show Order</Button>
+                <Button onClick={() => navigte(`/dashboard/users/${user?._id}`)} variant='outline'><Edit />Edit</Button>
+                <Button onClick={() => navigte(`/dashboard/users/orders/${user?._id}`)}><Eye />Show Order</Button>
               </div>
             </div>
           })

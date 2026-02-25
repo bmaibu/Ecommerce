@@ -101,7 +101,7 @@ const AdminProduct = () => {
 
     try {
       const res = await axios.put(
-        `http://localhost:8000/api/v1/product/update/${editProduct._id}`,
+        `${import.meta.env.VITE_URL}/api/v1/product/update/${editProduct._id}`,
         formData,
         {
           headers: {
@@ -126,7 +126,7 @@ const AdminProduct = () => {
   const deleteProductHandler = async (productId) => {
     try {
       const remainingProducts = products.filter((product) => product._id !== productId)
-      const res = await axios.delete(`http://localhost:8000/api/v1/product/delete/${productId}`, {
+      const res = await axios.delete(`${import.meta.env.VITE_URL}/api/v1/product/delete/${productId}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`
         }
@@ -293,8 +293,8 @@ const AdminProduct = () => {
                         <AlertDialogHeader>
                           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
                           <AlertDialogDescription>
-                            This action cannot be undone. This will permanently delete your account
-                            and remove your data from our servers.
+                            This action cannot be undone. This will permanently delete this product
+                            and remove its data from our servers.
                           </AlertDialogDescription>
                         </AlertDialogHeader>
                         <AlertDialogFooter>

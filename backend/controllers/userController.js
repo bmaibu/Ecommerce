@@ -82,10 +82,10 @@ export const verify = async (req, res) => {
         try {
             decoded = jwt.verify(token, process.env.SECRET_KEY)
         } catch (error) {
-            if (error.name === "TokenExpieredError") {
+            if (error.name === "TokenExpiredError") {
                 return res.status(400).json({
                     success: false,
-                    message: "The reistration token has expired"
+                    message: "The registration token has expired"
                 })
             }
             return res.status(400).json({
@@ -251,6 +251,7 @@ export const forgotPassword = async (req, res) => {
         }
         const otp = Math.floor(100000 + Math.random() * 900000).toString()
         const otpExpiry = new Date(Date.now() + 10 * 60 * 1000) //10 mins
+        user.otp = otp
         user.otpExpiry = otpExpiry
 
         await user.save()
@@ -291,7 +292,7 @@ export const verifyOTP = async (req, res) => {
                 message: 'Otp is not generated or already verified'
             })
         }
-        if (!user.otpExpiry < new Date()) {
+        if (user.otpExpiry < new Date()) {
             return res.status(400).json({
                 success: false,
                 message: "Otp has expired please request a new one"

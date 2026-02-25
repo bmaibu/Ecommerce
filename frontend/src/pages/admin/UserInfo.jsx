@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { ArrowLeft } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
-import {  useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import userLogo from "../../assets/userlogo.png"
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
@@ -49,11 +49,11 @@ const UserInfo = () => {
       formData.append("role", updateUser.role)
 
       if (file) {
-        formData.append("file", file)
+        formData.append("files", file)
       }
 
       const res = await axios.put(
-        `http://localhost:8000/api/v1/user/update/${userId}`,
+        `${import.meta.env.VITE_URL}/api/v1/user/update/${userId}`,
         formData,
         {
           headers: {
@@ -61,7 +61,7 @@ const UserInfo = () => {
           }
         }
       )
-      
+
 
       if (res.data.success) {
         toast.success(res.data.message)
@@ -76,7 +76,7 @@ const UserInfo = () => {
 
   const getUserDetails = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/v1/user/get-user/${userId}`)
+      const res = await axios.get(`${import.meta.env.VITE_URL}/api/v1/user/get-user/${userId}`)
       if (res.data.success) {
         setUpdateUser(res.data.user)
       }

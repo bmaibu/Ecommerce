@@ -71,7 +71,7 @@ const Profile = () => {
                 formData.append("files", file);// image file for backend multer
             }
 
-            const res = await axios.put(`http://localhost:8000/api/v1/user/update/${userId}`, formData, {
+            const res = await axios.put(`${import.meta.env.VITE_URL}/api/v1/user/update/${userId}`, formData, {
                 headers: {
                     Authorization: `Bearer ${accessToken}`,
                     'Content-Type': 'multipart/form-data'
@@ -80,8 +80,7 @@ const Profile = () => {
             if (res.data.success) {
                 toast.success(res.data.message)
                 // Assuming you have a setUser action from your userSlice
-                // import { setUser } from '../store/userSlice'
-                // dispatch(setUser(res.data.user))
+                dispatch(setUser(res.data.user))
             }
         } catch (error) {
             console.log(error)

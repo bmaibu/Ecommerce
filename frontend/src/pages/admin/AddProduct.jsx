@@ -160,7 +160,7 @@ const AddProduct = () => {
             setLoading(true)
 
             const res = await axios.post(
-                "http://localhost:8000/api/v1/product/add",
+                `${import.meta.env.VITE_URL}/api/v1/product/add`,
                 formData,
                 {
                     headers: {
@@ -170,7 +170,7 @@ const AddProduct = () => {
             )
 
             if (res.data.success) {
-                dispatch(setProducts([...products, res.data.products]))
+                dispatch(setProducts([...products, res.data.product]))
                 toast.success(res.data.message)
             }
         } catch (error) {
