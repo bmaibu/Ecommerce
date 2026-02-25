@@ -15,7 +15,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "https://ecommerce-seven-tan-28.vercel.app/",
+    origin: [
+      process.env.FRONTEND_URL,
+      process.env.FRONTEND_URL?.replace(/\/$/, ""),
+      "https://ecommerce-seven-tan-28.vercel.app",
+      "http://localhost:5173"
+    ].filter(Boolean),
     credentials: true,
   })
 );
