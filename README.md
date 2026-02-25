@@ -98,6 +98,7 @@ cd frontend && npm run dev
 ---
 
 ## 🔗 Live Implementation
+- **Production Frontend**: [https://ecommerce-seven-tan-28.vercel.app/](https://ecommerce-seven-tan-28.vercel.app/)
 - **Production Backend**: [https://ecommerce-p45f.onrender.com](https://ecommerce-p45f.onrender.com)
 - **Status API**: `https://ecommerce-p45f.onrender.com/api/v1/product/get` (Sample Endpoint)
 
