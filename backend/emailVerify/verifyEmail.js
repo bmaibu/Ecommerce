@@ -3,7 +3,9 @@ import 'dotenv/config'
 
 export const verifyEmail = (token, email) => {
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: "smtp-relay.brevo.com",
+        port: 587,
+        secure: false,
         auth: {
             user: process.env.MAIL_USER,
             pass: process.env.MAIL_PASS
@@ -12,12 +14,11 @@ export const verifyEmail = (token, email) => {
 
     const mailConfigurations = {
 
-        from: process.env.MAIL_USER,
+        from: "bmaibu213@gmail.com",
 
         to: email,
         subject: 'Email Verification',
 
-        // This would be the text of email body
         text: `Hi! There, You have recently visited 
                our website and entered your email.
                Please follow the given link to verify your email
@@ -31,8 +32,3 @@ export const verifyEmail = (token, email) => {
         console.log(info);
     });
 }
-
-
-
-
-
