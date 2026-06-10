@@ -19,7 +19,8 @@ app.use(
       process.env.FRONTEND_URL,
       process.env.FRONTEND_URL?.replace(/\/$/, ""),
       "https://ecommerce-seven-tan-28.vercel.app",
-      "http://localhost:5173"
+      "http://localhost:5173",
+      "http://localhost:5174"
     ].filter(Boolean),
     credentials: true,
   })

@@ -37,26 +37,31 @@ export const register = async (req, res) => {
             lastName,
             email,
             password: hashedPassword,
+            isVerified: true,
+            isLoggedIn: true
         });
 
         // Generate token
-        const token = jwt.sign(
+        const accessToken = jwt.sign(
             { id: newUser._id },
             process.env.SECRET_KEY,
-            { expiresIn: "10m" }
+            { expiresIn: "10d" }
+        );
+        const refreshToken = jwt.sign(
+            { id: newUser._id },
+            process.env.SECRET_KEY,
+            { expiresIn: "30d" }
         );
 
-        // Send verification email
-        verifyEmail(token, email);
-
-        // Save token
-        newUser.token = token;
-        await newUser.save();
+        // Create a new session
+        await Session.create({ userId: newUser._id });
 
         return res.status(201).json({
             success: true,
             message: "User registered successfully",
             user: newUser,
+            accessToken,
+            refreshToken
         });
     } catch (error) {
         return res.status(500).json({
@@ -184,12 +189,6 @@ export const login = async (req, res) => {
             return res.status(400).json({
                 success: false,
                 message: 'Invalid credentials'
-            })
-        }
-        if (existingUser.isVerified === false) {
-            return res.status(400).json({
-                success: false,
-                message: "Verify your account than login"
             })
         }
         // generate token 
